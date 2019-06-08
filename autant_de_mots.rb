@@ -13,7 +13,7 @@ str = gets.chomp
 arr = []
 arr << str
 
-until str == "Enter"
+until str == ""
   puts "Entrez un autre mot:"
   str = gets.chomp
   arr << str
@@ -21,9 +21,13 @@ end
 
 puts "---------"
 
-puts arr.sort_by { |word| word.downcase }
+alpha_arr = arr.sort_by { |word| word.downcase }
+alpha_arr.shift
+puts alpha_arr
 
 puts "--------"
+
+
 # Essayez d'écrire le programme ci-dessus sans utiliser la méthode
 # `sort`. La plupart du temps la programmation consiste à résoudre
 # des problèmes, aussi mettez en pratique tout ce que vous pouvez! 
@@ -35,7 +39,7 @@ str = gets.chomp
 arr = []
 arr << str
 
-until str == "Enter"
+until str == ""
   puts "Entrez un autre mot:"
   str = gets.chomp
 
@@ -47,6 +51,8 @@ until str == "Enter"
     arr.insert(arr.find_index { |mot| mot.downcase > str.downcase }, str)
   end
 end
+
+arr.shift
 
 puts "-----------"
 
